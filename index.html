@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGT - Sistema Inteligente de Gestión de Tareas</title>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================= -->
+    <!-- 1. HEADER CON NOMBRE DEL PROYECTO -->
+    <!-- ============================= -->
+    <header class="header" id="inicio">
+        <div class="contenedor header-contenido">
+            <!-- Logo / nombre corto del proyecto -->
+            <a href="#inicio" class="logo">
+                <span class="logo-icono">✓</span>
+                <span class="logo-texto">SIGT</span>
+            </a>
+
+            <!-- Menú de navegación -->
+            <nav class="nav" id="menu">
+                <ul class="nav-lista">
+                    <li><a href="#problema" class="nav-enlace">Problema</a></li>
+                    <li><a href="#solucion" class="nav-enlace">Solución</a></li>
+                    <li><a href="#objetivo" class="nav-enlace">Objetivo</a></li>
+                    <li><a href="#funcionalidades" class="nav-enlace">Funcionalidades</a></li>
+                    <li><a href="#mvp" class="nav-enlace">MVP</a></li>
+                    <li><a href="#tecnologias" class="nav-enlace">Tecnologías</a></li>
+                    <li><a href="#equipo" class="nav-enlace">Equipo</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón hamburguesa (solo visible en móvil) -->
+            <button class="boton-menu" id="botonMenu" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================= -->
+    <!-- 2. HERO PRINCIPAL -->
+    <!-- ============================= -->
+    <section class="hero">
+        <div class="contenedor hero-contenido">
+            <span class="hero-etiqueta">Proyecto de Software</span>
+            <h1 class="hero-titulo">
+                Sistema Inteligente de <br>
+                <span class="texto-resaltado">Gestión de Tareas</span>
+            </h1>
+            <p class="hero-descripcion">
+                Una aplicación web moderna que ayuda a organizar, gestionar y dar seguimiento
+                a las actividades diarias de forma eficiente, mejorando la productividad personal.
+            </p>
+            <div class="hero-botones">
+                <a href="#solucion" class="boton boton-primario">Conocer la solución</a>
+                <a href="#funcionalidades" class="boton boton-secundario">Ver funcionalidades</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 3. PROBLEMA -->
+    <!-- ============================= -->
+    <section class="seccion" id="problema">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">01</span>
+                <h2 class="seccion-titulo">El Problema</h2>
+                <p class="seccion-subtitulo">
+                    Muchas personas tienen dificultades para gestionar sus tareas diarias.
+                </p>
+            </div>
+
+            <div class="problema-grid">
+                <!-- Texto explicativo del problema -->
+                <div class="problema-texto">
+                    <p>
+                        En la actualidad, tanto en el ámbito académico como personal, la mayoría
+                        de las personas administran sus actividades de forma <strong>manual</strong>
+                        o con herramientas poco estructuradas como notas físicas, aplicaciones
+                        básicas o simples recordatorios mentales.
+                    </p>
+                    <p>
+                        Esto provoca <strong>retrasos, olvidos y una disminución importante en la
+                        productividad</strong>. Además, las herramientas actuales no suelen integrar
+                        todas las funciones necesarias en un solo lugar.
+                    </p>
+                </div>
+
+                <!-- Lista de puntos del problema -->
+                <ul class="problema-lista">
+                    <li>
+                        <span class="problema-icono">!</span>
+                        <span>Falta de organización en las actividades</span>
+                    </li>
+                    <li>
+                        <span class="problema-icono">!</span>
+                        <span>Olvido frecuente de tareas importantes</span>
+                    </li>
+                    <li>
+                        <span class="problema-icono">!</span>
+                        <span>Ausencia de priorización clara</span>
+                    </li>
+                    <li>
+                        <span class="problema-icono">!</span>
+                        <span>Dificultad para visualizar el progreso</span>
+                    </li>
+                    <li>
+                        <span class="problema-icono">!</span>
+                        <span>Uso de múltiples aplicaciones al mismo tiempo</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 4. PROPUESTA DE SOLUCIÓN -->
+    <!-- ============================= -->
+    <section class="seccion seccion-alt" id="solucion">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">02</span>
+                <h2 class="seccion-titulo">Nuestra Solución</h2>
+                <p class="seccion-subtitulo">
+                    Una aplicación web que centraliza la gestión de tareas en un solo lugar.
+                </p>
+            </div>
+
+            <!-- Descripción general de la solución -->
+            <p class="solucion-descripcion">
+                Proponemos el desarrollo de una aplicación web basada en <strong>Componentes
+                Web</strong>, que permite crear tareas con título, descripción y estado,
+                organizarlas por categorías, recibir recordatorios, visualizar el rendimiento
+                con gráficas y almacenar recursos útiles. Toda la información se guarda con
+                <strong>LocalStorage</strong>, sin necesidad de un servidor externo.
+            </p>
+
+            <!-- Tarjetas con las ideas fuerza -->
+            <div class="solucion-grid">
+                <div class="solucion-tarjeta">
+                    <div class="solucion-icono">📋</div>
+                    <h3>Organización clara</h3>
+                    <p>
+                        Las tareas se agrupan por estado: pendiente, en progreso y completado,
+                        para visualizar fácilmente el progreso.
+                    </p>
+                </div>
+
+                <div class="solucion-tarjeta">
+                    <div class="solucion-icono">🔔</div>
+                    <h3>Recordatorios</h3>
+                    <p>
+                        Sistema de notificaciones que avisa sobre tareas importantes para evitar
+                        olvidos.
+                    </p>
+                </div>
+
+                <div class="solucion-tarjeta">
+                    <div class="solucion-icono">📊</div>
+                    <h3>Rendimiento</h3>
+                    <p>
+                        Gráficas dinámicas que muestran el avance del usuario según las tareas
+                        completadas y pendientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 5. OBJETIVO GENERAL -->
+    <!-- ============================= -->
+    <section class="seccion" id="objetivo">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">03</span>
+                <h2 class="seccion-titulo">Objetivo General</h2>
+            </div>
+
+            <!-- Tarjeta destacada con el objetivo -->
+            <div class="objetivo-caja">
+                <div class="objetivo-icono">🎯</div>
+                <p class="objetivo-texto">
+                    Desarrollar un <strong>Sistema Inteligente de Gestión de Tareas</strong>
+                    basado en Componentes Web, que permita a los usuarios organizar, gestionar
+                    y dar seguimiento a sus actividades de manera eficiente, integrando
+                    funcionalidades como recordatorios, visualización del rendimiento mediante
+                    gráficas y almacenamiento de recursos, con el fin de mejorar la productividad
+                    y optimizar la administración del tiempo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 6. FUNCIONALIDADES PRINCIPALES -->
+    <!-- ============================= -->
+    <section class="seccion seccion-alt" id="funcionalidades">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">04</span>
+                <h2 class="seccion-titulo">Funcionalidades Principales</h2>
+                <p class="seccion-subtitulo">
+                    Lo que los usuarios podrán hacer dentro del sistema.
+                </p>
+            </div>
+
+            <!-- Grid de tarjetas de funcionalidades -->
+            <div class="funcionalidades-grid">
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">📝</div>
+                    <h3>Crear tareas</h3>
+                    <p>Registrar nuevas tareas ingresando título y descripción.</p>
+                </div>
+
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">✏️</div>
+                    <h3>Editar y eliminar</h3>
+                    <p>Actualizar la información o borrar tareas cuando sea necesario.</p>
+                </div>
+
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">🗂️</div>
+                    <h3>Clasificar por estado</h3>
+                    <p>Organizar tareas en pendiente, en progreso o completado.</p>
+                </div>
+
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">🔔</div>
+                    <h3>Notificaciones</h3>
+                    <p>Recibir recordatorios de las tareas importantes.</p>
+                </div>
+
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">📊</div>
+                    <h3>Gráficas de rendimiento</h3>
+                    <p>Ver el progreso de las actividades de forma visual.</p>
+                </div>
+
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">📚</div>
+                    <h3>Repositorio de recursos</h3>
+                    <p>Guardar enlaces e información útil relacionada con las tareas.</p>
+                </div>
+
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">💾</div>
+                    <h3>Guardado automático</h3>
+                    <p>La información se conserva gracias al uso de LocalStorage.</p>
+                </div>
+
+                <div class="funcionalidad">
+                    <div class="funcionalidad-icono">📱</div>
+                    <h3>Diseño responsivo</h3>
+                    <p>Interfaz adaptable a computadoras, tablets y teléfonos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 7. MVP DEL SISTEMA -->
+    <!-- ============================= -->
+    <section class="seccion" id="mvp">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">05</span>
+                <h2 class="seccion-titulo">MVP del Sistema</h2>
+                <p class="seccion-subtitulo">
+                    Producto Mínimo Viable: las funciones esenciales de la primera versión.
+                </p>
+            </div>
+
+            <div class="mvp-grid">
+                <!-- Columna: incluido en el MVP -->
+                <div class="mvp-columna mvp-incluido">
+                    <h3 class="mvp-titulo">
+                        <span class="mvp-badge mvp-badge-ok">Incluido</span>
+                        En esta versión
+                    </h3>
+                    <ul class="mvp-lista">
+                        <li>Creación de tareas con título y descripción</li>
+                        <li>Visualización de la lista de tareas</li>
+                        <li>Edición y eliminación de tareas</li>
+                        <li>Clasificación por estado (pendiente / en progreso / completado)</li>
+                        <li>Almacenamiento de datos mediante LocalStorage</li>
+                        <li>Interfaz básica, intuitiva y funcional</li>
+                    </ul>
+                </div>
+
+                <!-- Columna: fuera del MVP -->
+                <div class="mvp-columna mvp-excluido">
+                    <h3 class="mvp-titulo">
+                        <span class="mvp-badge mvp-badge-no">Fuera</span>
+                        Para futuras versiones
+                    </h3>
+                    <ul class="mvp-lista">
+                        <li>Sistema avanzado de notificaciones automatizadas</li>
+                        <li>Visualización de gráficas de rendimiento</li>
+                        <li>Repositorio de recursos</li>
+                        <li>Integración con bases de datos externas o en la nube</li>
+                        <li>Sistema de autenticación de usuarios</li>
+                        <li>Aplicación móvil nativa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 8. TECNOLOGÍAS USADAS -->
+    <!-- ============================= -->
+    <section class="seccion seccion-alt" id="tecnologias">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">06</span>
+                <h2 class="seccion-titulo">Tecnologías Usadas</h2>
+                <p class="seccion-subtitulo">
+                    Herramientas estándar del desarrollo web con las que está construido el sistema.
+                </p>
+            </div>
+
+            <!-- Grid de tecnologías -->
+            <div class="tecnologias-grid">
+                <div class="tecnologia">
+                    <div class="tecnologia-icono">🌐</div>
+                    <h3>HTML5</h3>
+                    <p>Estructura semántica de la aplicación web.</p>
+                </div>
+
+                <div class="tecnologia">
+                    <div class="tecnologia-icono">🎨</div>
+                    <h3>CSS3</h3>
+                    <p>Diseño visual, layout responsivo y estilos modernos.</p>
+                </div>
+
+                <div class="tecnologia">
+                    <div class="tecnologia-icono">⚡</div>
+                    <h3>JavaScript (ES6)</h3>
+                    <p>Lógica de la aplicación e interacción con el usuario.</p>
+                </div>
+
+                <div class="tecnologia">
+                    <div class="tecnologia-icono">🧩</div>
+                    <h3>Componentes Web</h3>
+                    <p>Estructura modular y reutilizable del sistema.</p>
+                </div>
+
+                <div class="tecnologia">
+                    <div class="tecnologia-icono">💾</div>
+                    <h3>LocalStorage</h3>
+                    <p>Persistencia de datos en el navegador, sin servidor externo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 9. INTEGRANTES DEL EQUIPO -->
+    <!-- ============================= -->
+    <section class="seccion" id="equipo">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">07</span>
+                <h2 class="seccion-titulo">Integrantes del Equipo</h2>
+                <p class="seccion-subtitulo">
+                    Estudiantes responsables del desarrollo del proyecto.
+                </p>
+            </div>
+
+            <!-- Grid de integrantes -->
+            <div class="equipo-grid">
+                <div class="integrante">
+                    <div class="integrante-avatar">DM</div>
+                    <h3>Diego Armando Molina Fernández</h3>
+                    <p>Estudiante</p>
+                </div>
+
+                <div class="integrante">
+                    <div class="integrante-avatar">CR</div>
+                    <h3>Carlos Humberto Rodríguez Saenz</h3>
+                    <p>Estudiante</p>
+                </div>
+
+                <div class="integrante">
+                    <div class="integrante-avatar">RT</div>
+                    <h3>Ronaldo Darío Turcios Álvarez</h3>
+                    <p>Estudiante</p>
+                </div>
+
+                <div class="integrante">
+                    <div class="integrante-avatar">MT</div>
+                    <h3>Mario Humberto Torres Fuentes</h3>
+                    <p>Estudiante</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 10. FOOTER -->
+    <!-- ============================= -->
+    <footer class="footer">
+        <div class="contenedor footer-contenido">
+            <div class="footer-columna">
+                <h4 class="footer-titulo">SIGT</h4>
+                <p>Sistema Inteligente de Gestión de Tareas.</p>
+                <p>Proyecto académico de software.</p>
+            </div>
+
+            <div class="footer-columna">
+                <h4 class="footer-titulo">Información académica</h4>
+                <p><strong>Asignatura:</strong> Aplicación de métodos ágiles en desarrollo de software</p>
+                <p><strong>Docente:</strong> Ing. José Adolfo Funes</p>
+                <p><strong>Facultad:</strong> Ingeniería y Arquitectura</p>
+            </div>
+
+            <div class="footer-columna">
+                <h4 class="footer-titulo">Secciones</h4>
+                <ul class="footer-lista">
+                    <li><a href="#problema">Problema</a></li>
+                    <li><a href="#solucion">Solución</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Línea inferior del footer -->
+        <div class="footer-inferior">
+            <p>&copy; 2026 SIGT. Proyecto académico elaborado por estudiantes.</p>
+        </div>
+    </footer>
+
+    <!-- Botón flotante para volver arriba -->
+    <button id="botonArriba" class="boton-arriba" aria-label="Volver arriba">↑</button>
+
+    <!-- Archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

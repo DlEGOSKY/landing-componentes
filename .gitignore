@@ -1,0 +1,15 @@
+# Documentos internos del equipo (no van al repo)
+guion-defensa.md
+*.pdf
+
+# ZIP generado para la entrega
+*.zip
+
+# Archivos temporales del editor
+*.swp
+.vscode/
+.idea/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store

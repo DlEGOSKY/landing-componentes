@@ -67,27 +67,47 @@ botonArriba.addEventListener("click", function () {
 
 
 /* ==============================================
-   4. MINI DEMO INTERACTIVO DE GESTION DE TAREAS
-   - Permite crear, marcar y eliminar tareas
-   - Los datos se guardan en LocalStorage del navegador
+   4. MINI DEMO DE GESTION DE TAREAS
+   Crear, clasificar por estado y prioridad, filtrar y eliminar.
+   Los datos se guardan en LocalStorage.
    ============================================== */
 
-// Clave que usaremos para guardar/leer en LocalStorage
-const CLAVE_STORAGE = "sigt_demo_tareas";
+const CLAVE_STORAGE = "sigt_demo_tareas_v2";
 
-// Elementos del DOM que necesita el demo
+// Elementos del formulario
 const formularioTarea = document.getElementById("formularioTarea");
-const inputTarea = document.getElementById("inputTarea");
+const inputTitulo = document.getElementById("inputTitulo");
+const inputDescripcion = document.getElementById("inputDescripcion");
+const inputEstado = document.getElementById("inputEstado");
+const inputPrioridad = document.getElementById("inputPrioridad");
+
+// Elementos de la lista y contadores
 const listaTareas = document.getElementById("listaTareas");
 const mensajeVacio = document.getElementById("mensajeVacio");
 const totalTareas = document.getElementById("totalTareas");
 const pendientesTareas = document.getElementById("pendientesTareas");
+const progresoTareas = document.getElementById("progresoTareas");
 const completadasTareas = document.getElementById("completadasTareas");
+const demoFiltros = document.getElementById("demoFiltros");
 
-// Array que mantiene las tareas en memoria mientras el usuario interactua
+// Tareas en memoria y filtro activo
 let tareas = [];
+let filtroActual = "todas";
 
-// Carga las tareas que ya estaban guardadas en el navegador
+// Etiquetas legibles
+const etiquetasEstado = {
+    "pendiente": "Pendiente",
+    "en-progreso": "En progreso",
+    "completado": "Completado"
+};
+
+const etiquetasPrioridad = {
+    "baja": "Baja",
+    "media": "Media",
+    "alta": "Alta"
+};
+
+// Carga lo que estaba guardado en el navegador
 function cargarTareas() {
     const datos = localStorage.getItem(CLAVE_STORAGE);
     if (datos) {
@@ -96,117 +116,181 @@ function cargarTareas() {
     renderizar();
 }
 
-// Guarda el array actual de tareas en LocalStorage
+// Guarda el array completo en LocalStorage
 function guardarTareas() {
     localStorage.setItem(CLAVE_STORAGE, JSON.stringify(tareas));
 }
 
-// Actualiza los contadores que se muestran arriba de la lista
+// Cuenta cuantas tareas hay en cada estado
 function actualizarContadores() {
     const total = tareas.length;
-    const completadas = tareas.filter(function (t) {
-        return t.completada;
-    }).length;
-    const pendientes = total - completadas;
+    const pendientes = tareas.filter(function (t) { return t.estado === "pendiente"; }).length;
+    const enProgreso = tareas.filter(function (t) { return t.estado === "en-progreso"; }).length;
+    const completadas = tareas.filter(function (t) { return t.estado === "completado"; }).length;
 
     totalTareas.textContent = total;
     pendientesTareas.textContent = pendientes;
+    progresoTareas.textContent = enProgreso;
     completadasTareas.textContent = completadas;
 }
 
-// Dibuja la lista de tareas cada vez que algo cambia
-function renderizar() {
-    // Limpiamos la lista actual
-    listaTareas.innerHTML = "";
+// Devuelve las tareas que se deben mostrar segun el filtro
+function obtenerVisibles() {
+    if (filtroActual === "todas") {
+        return tareas;
+    }
+    return tareas.filter(function (t) { return t.estado === filtroActual; });
+}
 
-    // Si no hay tareas, mostramos el mensaje de "vacio"
-    if (tareas.length === 0) {
+// Construye una tarjeta de tarea (un <li>)
+function crearElementoTarea(tarea) {
+    const li = document.createElement("li");
+    li.className = "tarea prioridad-" + tarea.prioridad;
+
+    // Cabecera con badges de estado y prioridad
+    const cabecera = document.createElement("div");
+    cabecera.className = "tarea-cabecera";
+
+    const badgeEstado = document.createElement("span");
+    badgeEstado.className = "badge-estado estado-" + tarea.estado;
+    badgeEstado.textContent = etiquetasEstado[tarea.estado];
+
+    const badgePrioridad = document.createElement("span");
+    badgePrioridad.className = "badge-prioridad";
+    badgePrioridad.textContent = "Prioridad " + etiquetasPrioridad[tarea.prioridad];
+
+    cabecera.appendChild(badgeEstado);
+    cabecera.appendChild(badgePrioridad);
+
+    // Titulo
+    const titulo = document.createElement("h4");
+    titulo.className = "tarea-titulo";
+    titulo.textContent = tarea.titulo;
+
+    // Descripcion (si la hay)
+    const descripcion = document.createElement("p");
+    descripcion.className = "tarea-descripcion";
+    descripcion.textContent = tarea.descripcion ? tarea.descripcion : "Sin descripción";
+
+    // Controles: cambiar estado y eliminar
+    const controles = document.createElement("div");
+    controles.className = "tarea-controles";
+
+    const select = document.createElement("select");
+    const opciones = ["pendiente", "en-progreso", "completado"];
+    opciones.forEach(function (valor) {
+        const option = document.createElement("option");
+        option.value = valor;
+        option.textContent = etiquetasEstado[valor];
+        select.appendChild(option);
+    });
+    select.value = tarea.estado;
+    select.addEventListener("change", function () {
+        cambiarEstado(tarea.id, select.value);
+    });
+
+    const botonEliminar = document.createElement("button");
+    botonEliminar.className = "demo-eliminar";
+    botonEliminar.textContent = "\u00d7";
+    botonEliminar.title = "Eliminar tarea";
+    botonEliminar.addEventListener("click", function () {
+        eliminarTarea(tarea.id);
+    });
+
+    controles.appendChild(select);
+    controles.appendChild(botonEliminar);
+
+    li.appendChild(cabecera);
+    li.appendChild(titulo);
+    li.appendChild(descripcion);
+    li.appendChild(controles);
+
+    return li;
+}
+
+// Dibuja la lista cada vez que algo cambia
+function renderizar() {
+    listaTareas.innerHTML = "";
+    const visibles = obtenerVisibles();
+
+    if (visibles.length === 0) {
         mensajeVacio.classList.remove("oculto");
+        if (filtroActual === "todas") {
+            mensajeVacio.textContent = "No hay tareas todavía. Agrega la primera.";
+        } else {
+            mensajeVacio.textContent = "No hay tareas en esta categoría.";
+        }
     } else {
         mensajeVacio.classList.add("oculto");
     }
 
-    // Por cada tarea construimos un <li> con su contenido
-    tareas.forEach(function (tarea) {
-        const li = document.createElement("li");
-        if (tarea.completada) {
-            li.classList.add("completada");
-        }
-
-        // Checkbox para marcar como completada
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.checked = tarea.completada;
-        checkbox.addEventListener("change", function () {
-            alternarCompletada(tarea.id);
-        });
-
-        // Texto de la tarea
-        const span = document.createElement("span");
-        span.className = "tarea-texto";
-        span.textContent = tarea.texto;
-
-        // Boton para eliminar la tarea
-        const botonEliminar = document.createElement("button");
-        botonEliminar.className = "demo-eliminar";
-        botonEliminar.textContent = "\u00d7";
-        botonEliminar.title = "Eliminar tarea";
-        botonEliminar.addEventListener("click", function () {
-            eliminarTarea(tarea.id);
-        });
-
-        // Armamos el <li> y lo agregamos a la lista
-        li.appendChild(checkbox);
-        li.appendChild(span);
-        li.appendChild(botonEliminar);
-        listaTareas.appendChild(li);
+    visibles.forEach(function (tarea) {
+        listaTareas.appendChild(crearElementoTarea(tarea));
     });
 
     actualizarContadores();
 }
 
-// Agrega una tarea nueva al array y guarda
-function agregarTarea(texto) {
-    const nueva = {
+// Agrega una tarea nueva
+function agregarTarea(titulo, descripcion, estado, prioridad) {
+    tareas.push({
         id: Date.now(),
-        texto: texto,
-        completada: false
-    };
-    tareas.push(nueva);
+        titulo: titulo,
+        descripcion: descripcion,
+        estado: estado,
+        prioridad: prioridad
+    });
     guardarTareas();
     renderizar();
 }
 
-// Cambia el estado de una tarea (de pendiente a completada y viceversa)
-function alternarCompletada(id) {
-    tareas = tareas.map(function (t) {
-        if (t.id === id) {
-            t.completada = !t.completada;
-        }
-        return t;
-    });
-    guardarTareas();
-    renderizar();
+// Cambia el estado de una tarea
+function cambiarEstado(id, nuevoEstado) {
+    const tarea = tareas.find(function (t) { return t.id === id; });
+    if (tarea) {
+        tarea.estado = nuevoEstado;
+        guardarTareas();
+        renderizar();
+    }
 }
 
 // Elimina una tarea por su id
 function eliminarTarea(id) {
-    tareas = tareas.filter(function (t) {
-        return t.id !== id;
-    });
+    tareas = tareas.filter(function (t) { return t.id !== id; });
     guardarTareas();
     renderizar();
 }
 
-// Cuando el usuario envia el formulario, agregamos la tarea
+// Cuando el usuario envia el formulario
 formularioTarea.addEventListener("submit", function (evento) {
     evento.preventDefault();
-    const texto = inputTarea.value.trim();
-    if (texto !== "") {
-        agregarTarea(texto);
-        inputTarea.value = "";
-    }
+    const titulo = inputTitulo.value.trim();
+    if (titulo === "") return;
+
+    agregarTarea(
+        titulo,
+        inputDescripcion.value.trim(),
+        inputEstado.value,
+        inputPrioridad.value
+    );
+
+    // Limpiar el formulario para la siguiente
+    inputTitulo.value = "";
+    inputDescripcion.value = "";
+    inputEstado.value = "pendiente";
+    inputPrioridad.value = "media";
 });
 
-// Iniciamos el demo cargando las tareas guardadas (si las hay)
+// Click en los botones de filtro
+demoFiltros.addEventListener("click", function (evento) {
+    if (!evento.target.classList.contains("filtro")) return;
+
+    const activoActual = demoFiltros.querySelector(".activo");
+    if (activoActual) activoActual.classList.remove("activo");
+
+    evento.target.classList.add("activo");
+    filtroActual = evento.target.dataset.filtro;
+    renderizar();
+});
+
 cargarTareas();

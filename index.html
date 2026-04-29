@@ -56,8 +56,8 @@
                 <span class="texto-resaltado">Gestión de Tareas</span>
             </h1>
             <p class="hero-descripcion">
-                Una aplicación web moderna que ayuda a organizar, gestionar y dar seguimiento
-                a las actividades diarias de forma eficiente, mejorando la productividad personal.
+                Aplicación web para organizar y dar seguimiento a tus tareas diarias.
+                Crea, clasifica y maneja tus pendientes en un solo lugar.
             </p>
             <div class="hero-botones">
                 <a href="#solucion" class="boton boton-primario">Conocer la solución</a>
@@ -72,7 +72,6 @@
     <section class="seccion" id="problema">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">01</span>
                 <h2 class="seccion-titulo">El Problema</h2>
                 <p class="seccion-subtitulo">
                     Muchas personas tienen dificultades para gestionar sus tareas diarias.
@@ -128,7 +127,6 @@
     <section class="seccion seccion-alt" id="solucion">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">02</span>
                 <h2 class="seccion-titulo">Nuestra Solución</h2>
                 <p class="seccion-subtitulo">
                     Una aplicación web que centraliza la gestión de tareas en un solo lugar.
@@ -137,11 +135,9 @@
 
             <!-- Descripción general de la solución -->
             <p class="solucion-descripcion">
-                Proponemos el desarrollo de una aplicación web basada en <strong>Componentes
-                Web</strong>, que permite crear tareas con título, descripción y estado,
-                organizarlas por categorías, recibir recordatorios, visualizar el rendimiento
-                con gráficas y almacenar recursos útiles. Toda la información se guarda con
-                <strong>LocalStorage</strong>, sin necesidad de un servidor externo.
+                Una aplicación web hecha con Componentes Web. Permite crear tareas con título,
+                descripción y estado, organizarlas por categoría, recibir recordatorios y ver
+                el progreso con gráficas. Los datos se guardan en LocalStorage, sin servidor.
             </p>
 
             <!-- Tarjetas con las ideas fuerza -->
@@ -182,7 +178,6 @@
     <section class="seccion" id="beneficios">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">03</span>
                 <h2 class="seccion-titulo">¿Por qué usar SIGT?</h2>
                 <p class="seccion-subtitulo">
                     Lo que el usuario gana al usar nuestra solución.
@@ -192,39 +187,23 @@
             <!-- Grid con los 4 beneficios principales -->
             <div class="beneficios-grid">
                 <div class="beneficio">
-                    <div class="beneficio-numero">01</div>
                     <h3>Ahorras tiempo</h3>
-                    <p>
-                        Centraliza todas tus tareas en un solo lugar y olvídate de
-                        saltar entre aplicaciones o anotar en papel.
-                    </p>
+                    <p>Todo en un solo lugar, sin saltar entre apps ni buscar notas en papel.</p>
                 </div>
 
                 <div class="beneficio">
-                    <div class="beneficio-numero">02</div>
                     <h3>Nada se te olvida</h3>
-                    <p>
-                        La clasificación por estado y los recordatorios mantienen
-                        siempre tus pendientes a la vista.
-                    </p>
+                    <p>Las tareas se clasifican por estado y los recordatorios avisan antes que algo se te pase.</p>
                 </div>
 
                 <div class="beneficio">
-                    <div class="beneficio-numero">03</div>
                     <h3>Visualizas tu progreso</h3>
-                    <p>
-                        Las gráficas dinámicas te muestran cómo avanzas y dónde
-                        puedes mejorar tu productividad.
-                    </p>
+                    <p>Las gráficas muestran cuántas tareas completaste y cuáles siguen pendientes.</p>
                 </div>
 
                 <div class="beneficio">
-                    <div class="beneficio-numero">04</div>
                     <h3>Funciona sin internet</h3>
-                    <p>
-                        Toda la información se guarda en tu navegador con LocalStorage.
-                        Tus datos siempre disponibles.
-                    </p>
+                    <p>Los datos se guardan en el navegador con LocalStorage. No necesita conexión ni servidor.</p>
                 </div>
             </div>
         </div>
@@ -236,7 +215,6 @@
     <section class="seccion" id="objetivo">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">04</span>
                 <h2 class="seccion-titulo">Objetivo General</h2>
             </div>
 
@@ -261,7 +239,6 @@
     <section class="seccion seccion-alt" id="funcionalidades">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">05</span>
                 <h2 class="seccion-titulo">Funcionalidades Principales</h2>
                 <p class="seccion-subtitulo">
                     Lo que los usuarios podrán hacer dentro del sistema.
@@ -327,7 +304,6 @@
     <section class="seccion" id="mvp">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">06</span>
                 <h2 class="seccion-titulo">MVP del Sistema</h2>
                 <p class="seccion-subtitulo">
                     Producto Mínimo Viable: las funciones esenciales de la primera versión.
@@ -370,38 +346,57 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 9. DEMO INTERACTIVO -->
-    <!-- ============================= -->
+    <!-- Demo interactivo -->
     <section class="seccion" id="demo">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">07</span>
                 <h2 class="seccion-titulo">Pruébalo aquí</h2>
                 <p class="seccion-subtitulo">
-                    Una pequeña muestra del MVP. Tus tareas se guardan automáticamente en tu navegador.
+                    Pequeña muestra del MVP. Las tareas se guardan en tu navegador.
                 </p>
             </div>
 
             <div class="demo-contenedor">
-                <!-- Formulario para agregar una tarea nueva -->
+                <!-- Formulario para agregar tarea -->
                 <form class="demo-formulario" id="formularioTarea">
-                    <input type="text" id="inputTarea" placeholder="Escribe una tarea..." maxlength="100" required>
-                    <button type="submit" class="boton boton-primario">Agregar</button>
+                    <input type="text" id="inputTitulo" placeholder="Título de la tarea" maxlength="80" required>
+                    <textarea id="inputDescripcion" placeholder="Descripción (opcional)" rows="2" maxlength="200"></textarea>
+
+                    <div class="demo-campos">
+                        <select id="inputEstado">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="en-progreso">En progreso</option>
+                            <option value="completado">Completado</option>
+                        </select>
+                        <select id="inputPrioridad">
+                            <option value="baja">Prioridad baja</option>
+                            <option value="media" selected>Prioridad media</option>
+                            <option value="alta">Prioridad alta</option>
+                        </select>
+                        <button type="submit" class="boton boton-primario">Agregar</button>
+                    </div>
                 </form>
 
-                <!-- Contadores que se actualizan en vivo -->
+                <!-- Filtros para ver tareas por estado -->
+                <div class="demo-filtros" id="demoFiltros">
+                    <button class="filtro activo" data-filtro="todas" type="button">Todas</button>
+                    <button class="filtro" data-filtro="pendiente" type="button">Pendientes</button>
+                    <button class="filtro" data-filtro="en-progreso" type="button">En progreso</button>
+                    <button class="filtro" data-filtro="completado" type="button">Completadas</button>
+                </div>
+
+                <!-- Contadores -->
                 <div class="demo-estadisticas">
                     <span>Total: <strong id="totalTareas">0</strong></span>
                     <span>Pendientes: <strong id="pendientesTareas">0</strong></span>
+                    <span>En progreso: <strong id="progresoTareas">0</strong></span>
                     <span>Completadas: <strong id="completadasTareas">0</strong></span>
                 </div>
 
-                <!-- Lista dinámica de tareas (se rellena con JavaScript) -->
+                <!-- Lista dinámica -->
                 <ul class="demo-lista" id="listaTareas"></ul>
 
-                <!-- Mensaje que se muestra cuando no hay tareas -->
-                <p class="demo-vacio" id="mensajeVacio">No hay tareas todavía. ¡Agrega la primera!</p>
+                <p class="demo-vacio" id="mensajeVacio">No hay tareas todavía. Agrega la primera.</p>
             </div>
         </div>
     </section>
@@ -412,7 +407,6 @@
     <section class="seccion seccion-alt" id="tecnologias">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">08</span>
                 <h2 class="seccion-titulo">Tecnologías Usadas</h2>
                 <p class="seccion-subtitulo">
                     Herramientas estándar del desarrollo web con las que está construido el sistema.
@@ -460,7 +454,6 @@
     <section class="seccion" id="equipo">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">09</span>
                 <h2 class="seccion-titulo">Integrantes del Equipo</h2>
                 <p class="seccion-subtitulo">
                     Estudiantes responsables del desarrollo del proyecto.
@@ -501,14 +494,11 @@
     <!-- ============================= -->
     <section class="cta-final">
         <div class="contenedor cta-contenido">
-            <h2>¿Listo para organizar tu trabajo?</h2>
-            <p>
-                Conoce a fondo el proyecto y descubre cómo SIGT puede transformar
-                la forma en que gestionas tus actividades diarias.
-            </p>
+            <h2>¿Quieres probarlo?</h2>
+            <p>Prueba el mini demo de arriba y crea tus primeras tareas.</p>
             <div class="cta-botones">
-                <a href="#demo" class="boton boton-claro-primario">Probar el demo</a>
-                <a href="#equipo" class="boton boton-claro">Conocer al equipo</a>
+                <a href="#demo" class="boton boton-primario">Ir al demo</a>
+                <a href="#equipo" class="boton boton-secundario">Conocer al equipo</a>
             </div>
         </div>
     </section>

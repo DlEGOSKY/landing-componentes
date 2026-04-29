@@ -864,14 +864,12 @@ ul {
     font-size: 22px;
     cursor: pointer;
     box-shadow: var(--sombra-hover);
-    /* Se oculta por defecto; JS lo muestra al hacer scroll */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s, background-color 0.2s;
     z-index: 99;
 }
 
-/* Clase que agrega JS cuando se debe mostrar */
 .boton-arriba.visible {
     opacity: 1;
     visibility: visible;

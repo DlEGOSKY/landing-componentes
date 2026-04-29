@@ -123,7 +123,6 @@ function mostrarTareas() {
                 '<button class="demo-eliminar" title="Eliminar">\u00d7</button>' +
             '</div>';
 
-        // textContent para el titulo y la descripcion (evita problemas con caracteres especiales)
         li.querySelector(".tarea-titulo").textContent = tarea.titulo;
         li.querySelector(".tarea-descripcion").textContent = descripcion;
 

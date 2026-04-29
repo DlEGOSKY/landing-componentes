@@ -64,3 +64,149 @@ botonArriba.addEventListener("click", function () {
         behavior: "smooth"
     });
 });
+
+
+/* ==============================================
+   4. MINI DEMO INTERACTIVO DE GESTION DE TAREAS
+   - Permite crear, marcar y eliminar tareas
+   - Los datos se guardan en LocalStorage del navegador
+   ============================================== */
+
+// Clave que usaremos para guardar/leer en LocalStorage
+const CLAVE_STORAGE = "sigt_demo_tareas";
+
+// Elementos del DOM que necesita el demo
+const formularioTarea = document.getElementById("formularioTarea");
+const inputTarea = document.getElementById("inputTarea");
+const listaTareas = document.getElementById("listaTareas");
+const mensajeVacio = document.getElementById("mensajeVacio");
+const totalTareas = document.getElementById("totalTareas");
+const pendientesTareas = document.getElementById("pendientesTareas");
+const completadasTareas = document.getElementById("completadasTareas");
+
+// Array que mantiene las tareas en memoria mientras el usuario interactua
+let tareas = [];
+
+// Carga las tareas que ya estaban guardadas en el navegador
+function cargarTareas() {
+    const datos = localStorage.getItem(CLAVE_STORAGE);
+    if (datos) {
+        tareas = JSON.parse(datos);
+    }
+    renderizar();
+}
+
+// Guarda el array actual de tareas en LocalStorage
+function guardarTareas() {
+    localStorage.setItem(CLAVE_STORAGE, JSON.stringify(tareas));
+}
+
+// Actualiza los contadores que se muestran arriba de la lista
+function actualizarContadores() {
+    const total = tareas.length;
+    const completadas = tareas.filter(function (t) {
+        return t.completada;
+    }).length;
+    const pendientes = total - completadas;
+
+    totalTareas.textContent = total;
+    pendientesTareas.textContent = pendientes;
+    completadasTareas.textContent = completadas;
+}
+
+// Dibuja la lista de tareas cada vez que algo cambia
+function renderizar() {
+    // Limpiamos la lista actual
+    listaTareas.innerHTML = "";
+
+    // Si no hay tareas, mostramos el mensaje de "vacio"
+    if (tareas.length === 0) {
+        mensajeVacio.classList.remove("oculto");
+    } else {
+        mensajeVacio.classList.add("oculto");
+    }
+
+    // Por cada tarea construimos un <li> con su contenido
+    tareas.forEach(function (tarea) {
+        const li = document.createElement("li");
+        if (tarea.completada) {
+            li.classList.add("completada");
+        }
+
+        // Checkbox para marcar como completada
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = tarea.completada;
+        checkbox.addEventListener("change", function () {
+            alternarCompletada(tarea.id);
+        });
+
+        // Texto de la tarea
+        const span = document.createElement("span");
+        span.className = "tarea-texto";
+        span.textContent = tarea.texto;
+
+        // Boton para eliminar la tarea
+        const botonEliminar = document.createElement("button");
+        botonEliminar.className = "demo-eliminar";
+        botonEliminar.textContent = "\u00d7";
+        botonEliminar.title = "Eliminar tarea";
+        botonEliminar.addEventListener("click", function () {
+            eliminarTarea(tarea.id);
+        });
+
+        // Armamos el <li> y lo agregamos a la lista
+        li.appendChild(checkbox);
+        li.appendChild(span);
+        li.appendChild(botonEliminar);
+        listaTareas.appendChild(li);
+    });
+
+    actualizarContadores();
+}
+
+// Agrega una tarea nueva al array y guarda
+function agregarTarea(texto) {
+    const nueva = {
+        id: Date.now(),
+        texto: texto,
+        completada: false
+    };
+    tareas.push(nueva);
+    guardarTareas();
+    renderizar();
+}
+
+// Cambia el estado de una tarea (de pendiente a completada y viceversa)
+function alternarCompletada(id) {
+    tareas = tareas.map(function (t) {
+        if (t.id === id) {
+            t.completada = !t.completada;
+        }
+        return t;
+    });
+    guardarTareas();
+    renderizar();
+}
+
+// Elimina una tarea por su id
+function eliminarTarea(id) {
+    tareas = tareas.filter(function (t) {
+        return t.id !== id;
+    });
+    guardarTareas();
+    renderizar();
+}
+
+// Cuando el usuario envia el formulario, agregamos la tarea
+formularioTarea.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    const texto = inputTarea.value.trim();
+    if (texto !== "") {
+        agregarTarea(texto);
+        inputTarea.value = "";
+    }
+});
+
+// Iniciamos el demo cargando las tareas guardadas (si las hay)
+cargarTareas();

@@ -27,9 +27,10 @@
                 <ul class="nav-lista">
                     <li><a href="#problema" class="nav-enlace">Problema</a></li>
                     <li><a href="#solucion" class="nav-enlace">Solución</a></li>
-                    <li><a href="#objetivo" class="nav-enlace">Objetivo</a></li>
+                    <li><a href="#beneficios" class="nav-enlace">Beneficios</a></li>
                     <li><a href="#funcionalidades" class="nav-enlace">Funcionalidades</a></li>
                     <li><a href="#mvp" class="nav-enlace">MVP</a></li>
+                    <li><a href="#demo" class="nav-enlace">Demo</a></li>
                     <li><a href="#tecnologias" class="nav-enlace">Tecnologías</a></li>
                     <li><a href="#equipo" class="nav-enlace">Equipo</a></li>
                 </ul>
@@ -60,7 +61,7 @@
             </p>
             <div class="hero-botones">
                 <a href="#solucion" class="boton boton-primario">Conocer la solución</a>
-                <a href="#funcionalidades" class="boton boton-secundario">Ver funcionalidades</a>
+                <a href="#demo" class="boton boton-secundario">Probar el demo</a>
             </div>
         </div>
     </section>
@@ -176,12 +177,66 @@
     </section>
 
     <!-- ============================= -->
-    <!-- 5. OBJETIVO GENERAL -->
+    <!-- 5. BENEFICIOS / PROPUESTA DE VALOR -->
+    <!-- ============================= -->
+    <section class="seccion" id="beneficios">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">03</span>
+                <h2 class="seccion-titulo">¿Por qué usar SIGT?</h2>
+                <p class="seccion-subtitulo">
+                    Lo que el usuario gana al usar nuestra solución.
+                </p>
+            </div>
+
+            <!-- Grid con los 4 beneficios principales -->
+            <div class="beneficios-grid">
+                <div class="beneficio">
+                    <div class="beneficio-numero">01</div>
+                    <h3>Ahorras tiempo</h3>
+                    <p>
+                        Centraliza todas tus tareas en un solo lugar y olvídate de
+                        saltar entre aplicaciones o anotar en papel.
+                    </p>
+                </div>
+
+                <div class="beneficio">
+                    <div class="beneficio-numero">02</div>
+                    <h3>Nada se te olvida</h3>
+                    <p>
+                        La clasificación por estado y los recordatorios mantienen
+                        siempre tus pendientes a la vista.
+                    </p>
+                </div>
+
+                <div class="beneficio">
+                    <div class="beneficio-numero">03</div>
+                    <h3>Visualizas tu progreso</h3>
+                    <p>
+                        Las gráficas dinámicas te muestran cómo avanzas y dónde
+                        puedes mejorar tu productividad.
+                    </p>
+                </div>
+
+                <div class="beneficio">
+                    <div class="beneficio-numero">04</div>
+                    <h3>Funciona sin internet</h3>
+                    <p>
+                        Toda la información se guarda en tu navegador con LocalStorage.
+                        Tus datos siempre disponibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 6. OBJETIVO GENERAL -->
     <!-- ============================= -->
     <section class="seccion" id="objetivo">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">03</span>
+                <span class="seccion-numero">04</span>
                 <h2 class="seccion-titulo">Objetivo General</h2>
             </div>
 
@@ -201,12 +256,12 @@
     </section>
 
     <!-- ============================= -->
-    <!-- 6. FUNCIONALIDADES PRINCIPALES -->
+    <!-- 7. FUNCIONALIDADES PRINCIPALES -->
     <!-- ============================= -->
     <section class="seccion seccion-alt" id="funcionalidades">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">04</span>
+                <span class="seccion-numero">05</span>
                 <h2 class="seccion-titulo">Funcionalidades Principales</h2>
                 <p class="seccion-subtitulo">
                     Lo que los usuarios podrán hacer dentro del sistema.
@@ -267,12 +322,12 @@
     </section>
 
     <!-- ============================= -->
-    <!-- 7. MVP DEL SISTEMA -->
+    <!-- 8. MVP DEL SISTEMA -->
     <!-- ============================= -->
     <section class="seccion" id="mvp">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">05</span>
+                <span class="seccion-numero">06</span>
                 <h2 class="seccion-titulo">MVP del Sistema</h2>
                 <p class="seccion-subtitulo">
                     Producto Mínimo Viable: las funciones esenciales de la primera versión.
@@ -316,12 +371,48 @@
     </section>
 
     <!-- ============================= -->
-    <!-- 8. TECNOLOGÍAS USADAS -->
+    <!-- 9. DEMO INTERACTIVO -->
+    <!-- ============================= -->
+    <section class="seccion" id="demo">
+        <div class="contenedor">
+            <div class="seccion-encabezado">
+                <span class="seccion-numero">07</span>
+                <h2 class="seccion-titulo">Pruébalo aquí</h2>
+                <p class="seccion-subtitulo">
+                    Una pequeña muestra del MVP. Tus tareas se guardan automáticamente en tu navegador.
+                </p>
+            </div>
+
+            <div class="demo-contenedor">
+                <!-- Formulario para agregar una tarea nueva -->
+                <form class="demo-formulario" id="formularioTarea">
+                    <input type="text" id="inputTarea" placeholder="Escribe una tarea..." maxlength="100" required>
+                    <button type="submit" class="boton boton-primario">Agregar</button>
+                </form>
+
+                <!-- Contadores que se actualizan en vivo -->
+                <div class="demo-estadisticas">
+                    <span>Total: <strong id="totalTareas">0</strong></span>
+                    <span>Pendientes: <strong id="pendientesTareas">0</strong></span>
+                    <span>Completadas: <strong id="completadasTareas">0</strong></span>
+                </div>
+
+                <!-- Lista dinámica de tareas (se rellena con JavaScript) -->
+                <ul class="demo-lista" id="listaTareas"></ul>
+
+                <!-- Mensaje que se muestra cuando no hay tareas -->
+                <p class="demo-vacio" id="mensajeVacio">No hay tareas todavía. ¡Agrega la primera!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 10. TECNOLOGÍAS USADAS -->
     <!-- ============================= -->
     <section class="seccion seccion-alt" id="tecnologias">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">06</span>
+                <span class="seccion-numero">08</span>
                 <h2 class="seccion-titulo">Tecnologías Usadas</h2>
                 <p class="seccion-subtitulo">
                     Herramientas estándar del desarrollo web con las que está construido el sistema.
@@ -364,12 +455,12 @@
     </section>
 
     <!-- ============================= -->
-    <!-- 9. INTEGRANTES DEL EQUIPO -->
+    <!-- 11. INTEGRANTES DEL EQUIPO -->
     <!-- ============================= -->
     <section class="seccion" id="equipo">
         <div class="contenedor">
             <div class="seccion-encabezado">
-                <span class="seccion-numero">07</span>
+                <span class="seccion-numero">09</span>
                 <h2 class="seccion-titulo">Integrantes del Equipo</h2>
                 <p class="seccion-subtitulo">
                     Estudiantes responsables del desarrollo del proyecto.
@@ -406,7 +497,24 @@
     </section>
 
     <!-- ============================= -->
-    <!-- 10. FOOTER -->
+    <!-- LLAMADO A LA ACCION FINAL -->
+    <!-- ============================= -->
+    <section class="cta-final">
+        <div class="contenedor cta-contenido">
+            <h2>¿Listo para organizar tu trabajo?</h2>
+            <p>
+                Conoce a fondo el proyecto y descubre cómo SIGT puede transformar
+                la forma en que gestionas tus actividades diarias.
+            </p>
+            <div class="cta-botones">
+                <a href="#demo" class="boton boton-claro-primario">Probar el demo</a>
+                <a href="#equipo" class="boton boton-claro">Conocer al equipo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- 12. FOOTER -->
     <!-- ============================= -->
     <footer class="footer">
         <div class="contenedor footer-contenido">
@@ -428,7 +536,9 @@
                 <ul class="footer-lista">
                     <li><a href="#problema">Problema</a></li>
                     <li><a href="#solucion">Solución</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
                     <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#demo">Demo</a></li>
                     <li><a href="#equipo">Equipo</a></li>
                 </ul>
             </div>

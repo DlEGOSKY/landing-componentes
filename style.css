@@ -1,6 +1,4 @@
-/* ============================================ */
-/* VARIABLES DE COLOR Y AJUSTES GENERALES       */
-/* ============================================ */
+/* variables y reset */
 :root {
     /* Colores principales del proyecto */
     --color-primario: #4f46e5;
@@ -25,9 +23,6 @@
     --sombra-hover: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* ============================================ */
-/* RESET BASICO                                 */
-/* ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -63,9 +58,7 @@ ul {
     list-style: none;
 }
 
-/* ============================================ */
-/* 1. HEADER                                    */
-/* ============================================ */
+/* header */
 .header {
     position: sticky;
     top: 0;
@@ -138,9 +131,7 @@ ul {
     transition: 0.3s;
 }
 
-/* ============================================ */
-/* 2. HERO PRINCIPAL                            */
-/* ============================================ */
+/* hero */
 .hero {
     background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
     padding: 80px 0;
@@ -216,9 +207,7 @@ ul {
     color: #fff;
 }
 
-/* ============================================ */
-/* SECCIONES GENERALES                          */
-/* ============================================ */
+/* estilos generales de secciones */
 .seccion {
     padding: 80px 0;
 }
@@ -244,9 +233,7 @@ ul {
     margin: 0 auto;
 }
 
-/* ============================================ */
-/* 3. PROBLEMA                                  */
-/* ============================================ */
+/* problema */
 .problema-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -289,9 +276,7 @@ ul {
     font-weight: bold;
 }
 
-/* ============================================ */
-/* 4. SOLUCION                                  */
-/* ============================================ */
+/* solucion */
 .solucion-descripcion {
     text-align: center;
     max-width: 800px;
@@ -341,9 +326,7 @@ ul {
     font-size: 15px;
 }
 
-/* ============================================ */
-/* 5. BENEFICIOS / PROPUESTA DE VALOR           */
-/* ============================================ */
+/* beneficios */
 .beneficios-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -370,9 +353,7 @@ ul {
     margin: 0;
 }
 
-/* ============================================ */
-/* 6. OBJETIVO GENERAL                          */
-/* ============================================ */
+/* objetivo */
 .objetivo-caja {
     max-width: 850px;
     margin: 0 auto;
@@ -398,9 +379,7 @@ ul {
     color: var(--color-primario);
 }
 
-/* ============================================ */
-/* 6. FUNCIONALIDADES                           */
-/* ============================================ */
+/* funcionalidades */
 .funcionalidades-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -436,9 +415,7 @@ ul {
     color: var(--color-texto-claro);
 }
 
-/* ============================================ */
-/* 7. MVP                                       */
-/* ============================================ */
+/* mvp */
 .mvp-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -507,9 +484,7 @@ ul {
     min-width: 22px;
 }
 
-/* ============================================ */
-/* 8. TECNOLOGIAS                               */
-/* ============================================ */
+/* tecnologias */
 .tecnologias-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -545,9 +520,7 @@ ul {
     color: var(--color-texto-claro);
 }
 
-/* ============================================ */
-/* 9. EQUIPO                                    */
-/* ============================================ */
+/* equipo */
 .equipo-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -593,9 +566,7 @@ ul {
     color: var(--color-texto-claro);
 }
 
-/* ============================================ */
-/* DEMO INTERACTIVO                             */
-/* ============================================ */
+/* demo de tareas */
 .demo-contenedor {
     max-width: 720px;
     margin: 0 auto;
@@ -805,9 +776,7 @@ ul {
     display: none;
 }
 
-/* ============================================ */
-/* CTA FINAL                                    */
-/* ============================================ */
+/* cta final */
 .cta-final {
     background-color: var(--color-fondo-alt);
     padding: 50px 0;
@@ -835,9 +804,7 @@ ul {
     flex-wrap: wrap;
 }
 
-/* ============================================ */
-/* 11. FOOTER                                   */
-/* ============================================ */
+/* footer */
 .footer {
     background-color: #1f2937;
     color: #d1d5db;
@@ -883,9 +850,7 @@ ul {
     color: #9ca3af;
 }
 
-/* ============================================ */
-/* BOTON FLOTANTE "IR ARRIBA"                   */
-/* ============================================ */
+/* boton ir arriba */
 .boton-arriba {
     position: fixed;
     bottom: 30px;
@@ -916,9 +881,7 @@ ul {
     background-color: var(--color-primario-oscuro);
 }
 
-/* ============================================ */
-/* DISENO RESPONSIVO (moviles)                  */
-/* ============================================ */
+/* responsive (moviles y tablets) */
 @media (max-width: 768px) {
     /* Mostrar boton hamburguesa */
     .boton-menu {

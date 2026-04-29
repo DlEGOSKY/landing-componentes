@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGT - Sistema Inteligente de Gestión de Tareas</title>
-
-    <!-- Hoja de estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ============================= -->
-    <!-- 1. HEADER CON NOMBRE DEL PROYECTO -->
-    <!-- ============================= -->
+    <!-- Header -->
     <header class="header" id="inicio">
         <div class="contenedor header-contenido">
-            <!-- Logo / nombre corto del proyecto -->
             <a href="#inicio" class="logo">
                 <span class="logo-icono">✓</span>
                 <span class="logo-texto">SIGT</span>
             </a>
 
-            <!-- Menú de navegación -->
             <nav class="nav" id="menu">
                 <ul class="nav-lista">
                     <li><a href="#problema" class="nav-enlace">Problema</a></li>
@@ -36,7 +29,6 @@
                 </ul>
             </nav>
 
-            <!-- Botón hamburguesa (solo visible en móvil) -->
             <button class="boton-menu" id="botonMenu" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
@@ -45,9 +37,7 @@
         </div>
     </header>
 
-    <!-- ============================= -->
-    <!-- 2. HERO PRINCIPAL -->
-    <!-- ============================= -->
+    <!-- Hero -->
     <section class="hero">
         <div class="contenedor hero-contenido">
             <span class="hero-etiqueta">Proyecto de Software</span>
@@ -66,9 +56,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 3. PROBLEMA -->
-    <!-- ============================= -->
+    <!-- Problema -->
     <section class="seccion" id="problema">
         <div class="contenedor">
             <div class="seccion-encabezado">
@@ -79,7 +67,6 @@
             </div>
 
             <div class="problema-grid">
-                <!-- Texto explicativo del problema -->
                 <div class="problema-texto">
                     <p>
                         En la actualidad, tanto en el ámbito académico como personal, la mayoría
@@ -94,7 +81,6 @@
                     </p>
                 </div>
 
-                <!-- Lista de puntos del problema -->
                 <ul class="problema-lista">
                     <li>
                         <span class="problema-icono">!</span>
@@ -121,9 +107,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 4. PROPUESTA DE SOLUCIÓN -->
-    <!-- ============================= -->
+    <!-- Solución -->
     <section class="seccion seccion-alt" id="solucion">
         <div class="contenedor">
             <div class="seccion-encabezado">
@@ -133,14 +117,12 @@
                 </p>
             </div>
 
-            <!-- Descripción general de la solución -->
             <p class="solucion-descripcion">
                 Una aplicación web hecha con Componentes Web. Permite crear tareas con título,
                 descripción y estado, organizarlas por categoría, recibir recordatorios y ver
                 el progreso con gráficas. Los datos se guardan en LocalStorage, sin servidor.
             </p>
 
-            <!-- Tarjetas con las ideas fuerza -->
             <div class="solucion-grid">
                 <div class="solucion-tarjeta">
                     <div class="solucion-icono">📋</div>
@@ -172,9 +154,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 5. BENEFICIOS / PROPUESTA DE VALOR -->
-    <!-- ============================= -->
+    <!-- Beneficios -->
     <section class="seccion" id="beneficios">
         <div class="contenedor">
             <div class="seccion-encabezado">
@@ -184,7 +164,6 @@
                 </p>
             </div>
 
-            <!-- Grid con los 4 beneficios principales -->
             <div class="beneficios-grid">
                 <div class="beneficio">
                     <h3>Ahorras tiempo</h3>
@@ -209,16 +188,13 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 6. OBJETIVO GENERAL -->
-    <!-- ============================= -->
+    <!-- Objetivo general -->
     <section class="seccion" id="objetivo">
         <div class="contenedor">
             <div class="seccion-encabezado">
                 <h2 class="seccion-titulo">Objetivo General</h2>
             </div>
 
-            <!-- Tarjeta destacada con el objetivo -->
             <div class="objetivo-caja">
                 <div class="objetivo-icono">🎯</div>
                 <p class="objetivo-texto">
@@ -233,9 +209,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 7. FUNCIONALIDADES PRINCIPALES -->
-    <!-- ============================= -->
+    <!-- Funcionalidades -->
     <section class="seccion seccion-alt" id="funcionalidades">
         <div class="contenedor">
             <div class="seccion-encabezado">
@@ -245,7 +219,6 @@
                 </p>
             </div>
 
-            <!-- Grid de tarjetas de funcionalidades -->
             <div class="funcionalidades-grid">
                 <div class="funcionalidad">
                     <div class="funcionalidad-icono">📝</div>
@@ -298,9 +271,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 8. MVP DEL SISTEMA -->
-    <!-- ============================= -->
+    <!-- MVP -->
     <section class="seccion" id="mvp">
         <div class="contenedor">
             <div class="seccion-encabezado">
@@ -311,7 +282,6 @@
             </div>
 
             <div class="mvp-grid">
-                <!-- Columna: incluido en el MVP -->
                 <div class="mvp-columna mvp-incluido">
                     <h3 class="mvp-titulo">
                         <span class="mvp-badge mvp-badge-ok">Incluido</span>
@@ -327,7 +297,6 @@
                     </ul>
                 </div>
 
-                <!-- Columna: fuera del MVP -->
                 <div class="mvp-columna mvp-excluido">
                     <h3 class="mvp-titulo">
                         <span class="mvp-badge mvp-badge-no">Fuera</span>
@@ -357,7 +326,6 @@
             </div>
 
             <div class="demo-contenedor">
-                <!-- Formulario para agregar tarea -->
                 <form class="demo-formulario" id="formularioTarea">
                     <input type="text" id="inputTitulo" placeholder="Título de la tarea" maxlength="80" required>
                     <textarea id="inputDescripcion" placeholder="Descripción (opcional)" rows="2" maxlength="200"></textarea>
@@ -377,7 +345,6 @@
                     </div>
                 </form>
 
-                <!-- Filtros para ver tareas por estado -->
                 <div class="demo-filtros" id="demoFiltros">
                     <button class="filtro activo" data-filtro="todas" type="button">Todas</button>
                     <button class="filtro" data-filtro="pendiente" type="button">Pendientes</button>
@@ -385,7 +352,6 @@
                     <button class="filtro" data-filtro="completado" type="button">Completadas</button>
                 </div>
 
-                <!-- Contadores -->
                 <div class="demo-estadisticas">
                     <span>Total: <strong id="totalTareas">0</strong></span>
                     <span>Pendientes: <strong id="pendientesTareas">0</strong></span>
@@ -393,7 +359,6 @@
                     <span>Completadas: <strong id="completadasTareas">0</strong></span>
                 </div>
 
-                <!-- Lista dinámica -->
                 <ul class="demo-lista" id="listaTareas"></ul>
 
                 <p class="demo-vacio" id="mensajeVacio">No hay tareas todavía. Agrega la primera.</p>
@@ -401,9 +366,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 10. TECNOLOGÍAS USADAS -->
-    <!-- ============================= -->
+    <!-- Tecnologías -->
     <section class="seccion seccion-alt" id="tecnologias">
         <div class="contenedor">
             <div class="seccion-encabezado">
@@ -413,7 +376,6 @@
                 </p>
             </div>
 
-            <!-- Grid de tecnologías -->
             <div class="tecnologias-grid">
                 <div class="tecnologia">
                     <div class="tecnologia-icono">🌐</div>
@@ -448,9 +410,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 11. INTEGRANTES DEL EQUIPO -->
-    <!-- ============================= -->
+    <!-- Equipo -->
     <section class="seccion" id="equipo">
         <div class="contenedor">
             <div class="seccion-encabezado">
@@ -460,7 +420,6 @@
                 </p>
             </div>
 
-            <!-- Grid de integrantes -->
             <div class="equipo-grid">
                 <div class="integrante">
                     <div class="integrante-avatar">DM</div>
@@ -489,9 +448,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- LLAMADO A LA ACCION FINAL -->
-    <!-- ============================= -->
+    <!-- CTA final -->
     <section class="cta-final">
         <div class="contenedor cta-contenido">
             <h2>¿Quieres probarlo?</h2>
@@ -503,9 +460,7 @@
         </div>
     </section>
 
-    <!-- ============================= -->
-    <!-- 12. FOOTER -->
-    <!-- ============================= -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="contenedor footer-contenido">
             <div class="footer-columna">
@@ -534,16 +489,13 @@
             </div>
         </div>
 
-        <!-- Línea inferior del footer -->
         <div class="footer-inferior">
             <p>&copy; 2026 SIGT. Proyecto académico elaborado por estudiantes.</p>
         </div>
     </footer>
 
-    <!-- Botón flotante para volver arriba -->
     <button id="botonArriba" class="boton-arriba" aria-label="Volver arriba">↑</button>
 
-    <!-- Archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

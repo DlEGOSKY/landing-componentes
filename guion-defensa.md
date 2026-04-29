@@ -93,7 +93,7 @@ Si solo habla una persona, sigue el guion completo en orden.
 >
 > 8. **MVP:** somos honestos sobre qué incluye la primera versión y qué queda fuera. Esto demuestra alcance claro y profesional.
 >
-> 9. **Demo interactivo:** una pequeña muestra funcional del MVP. El visitante puede crear, marcar como completadas y eliminar tareas en vivo, con datos persistidos en LocalStorage. Es nuestra mayor prueba de concepto: en vez de solo decir *'esto va a funcionar'*, lo mostramos funcionando.
+> 9. **Demo interactivo:** una muestra funcional del MVP dentro de la propia landing. El visitante puede crear tareas con título y descripción, asignarles **estado** (pendiente, en progreso, completado) y **prioridad** (baja, media, alta), filtrar la lista por estado y eliminar tareas. Todo se guarda en LocalStorage. Es nuestra mayor prueba de concepto: en vez de solo decir *'esto va a funcionar'*, lo mostramos funcionando.
 >
 > 10. **Tecnologías:** HTML5, CSS3, JavaScript ES6, Componentes Web y LocalStorage. Tecnologías estándar y modernas.
 >
@@ -145,7 +145,7 @@ Si solo habla una persona, sigue el guion completo en orden.
 >
 > - **Botón flotante para volver arriba:** aparece solo cuando el usuario hace scroll. Mejora la experiencia sin estorbar.
 >
-> - **Demo en vivo con persistencia:** una sección donde el visitante puede crear, completar y eliminar tareas reales. Aplica el principio *show, don't tell*: vendemos mostrando, no solo contando. Los datos se guardan con LocalStorage en su propio navegador, lo que también demuestra técnicamente uno de los puntos clave del proyecto.
+> - **Demo en vivo:** sección donde el visitante puede crear tareas con estado y prioridad, filtrar la lista y verlas con badges de color según su estado. Los datos se guardan con LocalStorage. Demuestra técnicamente el manejo del DOM y la persistencia, dos puntos clave del proyecto.
 >
 > Todo está construido con **HTML, CSS y JavaScript puro**, sin frameworks. Esto fue una decisión técnica intencional: queríamos demostrar dominio de los fundamentos web, que es justamente lo que persigue la asignatura de Componentes Web."
 
@@ -210,13 +210,16 @@ Si solo habla una persona, sigue el guion completo en orden.
 > "La landing es **informativa**, así que sin JavaScript se ve igual y todo el contenido sigue siendo legible. Lo que se pierde es el menú móvil, el botón de volver arriba y el demo interactivo. Las funciones esenciales de presentación no dependen de JS."
 
 ### "¿Eso de abajo es la aplicación completa?"
-> "No, es una **muestra reducida del MVP** dentro de la propia landing. Permite al visitante experimentar la idea principal del producto: crear, marcar y eliminar tareas. La aplicación completa incluirá además clasificación por estado, recordatorios, gráficas de rendimiento y repositorio de recursos, como mostramos en la sección de funcionalidades."
+> "No, es una **muestra reducida del MVP** dentro de la propia landing. Permite al visitante experimentar la idea central del producto: crear tareas, clasificarlas por estado y prioridad, filtrarlas y eliminarlas. La aplicación completa incluirá además recordatorios automáticos, gráficas de rendimiento y un repositorio de recursos, como mostramos en la sección de funcionalidades."
 
 ### "¿Dónde se guardan las tareas que creo en el demo?"
 > "En el **LocalStorage del navegador del visitante**. No se envían a ningún servidor, no hay base de datos, no salen de su computadora. Si limpia el navegador o abre la página desde otro dispositivo, esas tareas no aparecerán. Es exactamente la misma técnica que usaremos en la aplicación completa."
 
 ### "¿Por qué incluyeron un demo en una landing informativa?"
-> "Porque convierte la propuesta de valor en algo **tangible**. En vez de solo prometer que el sistema va a funcionar, lo mostramos funcionando. Es el principio de *show, don't tell*: vender mostrando, no solo contando. Además, demuestra que dominamos técnicamente el manejo del DOM y de LocalStorage con JavaScript puro."
+> "Porque convierte la propuesta de valor en algo **tangible**. En vez de solo prometer que el sistema va a funcionar, lo mostramos funcionando. Además, demuestra que dominamos técnicamente el manejo del DOM y de LocalStorage con JavaScript puro."
+
+### "¿Qué cubre exactamente el demo y qué no?"
+> "El demo cubre las funcionalidades centrales del MVP: crear tareas con título y descripción, asignarles estado (pendiente, en progreso, completado) y prioridad (baja, media, alta), filtrar la lista por estado y eliminar. Lo que **no** cubre todavía y queda para la app completa son los recordatorios automáticos, las gráficas de rendimiento y el repositorio de recursos."
 
 ---
 
